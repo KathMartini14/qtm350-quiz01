@@ -1,1 +1,36 @@
+git clone https://github.com/KathMartini14/qtm350-quiz01.git
+cd qtm350-quiz01
+touch commands.txt
+git add commands.txt
+git status
+git checkout -b feature-update
+mkdir reports
+cd reports
+touch summary.md
+echo "This document provides a summary of the project updates" >> summary.md
+cd ..
+git add reports/
+git commit -m 'Add reports directory'
+cd reports
+touch file{1..3}.txt
+ls
+cd ..
+cd data
+mv raw-data.csv input-data.csv
+cd ..
+cd scripts
+mkdir backup && cp scripts/*.py scripts/backup/
+cd ..
+rm -f docs/documentation.md
+git add .
+git commit -m 'update project files'
+touch .gitignore
+echo 'temp/' >> .gitignore
+echo 'dataset0?.csv' >> .gitignore
+cat .gitignore
+git add .gitignore && git commit -m 'Add .gitignore file'
+git checkout main
+git branch
+git merge feature-update
+git branch --merged
 
